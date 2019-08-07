@@ -29,17 +29,19 @@ def initial_round
 end
 
 def hit?(card_total)
+  valid_inputs = ["h", "s"]
   prompt_user
   get_user_input
-  if 
-      # if user_input == "h"
-  #   card_total += deal_card
-  # elsif user_input == "s"
-  #   card_total
-  # else
-  #   invalid_command
-  #   hit?(card_total)
-  # end
+  until valid_inputs.include?(get_user_input)
+    invalid_command
+    prompt_user
+    get_user_input
+  end
+
+  if user_input == "h"
+    card_total += deal_card
+  end
+  card_total
 end
 
 def invalid_command
