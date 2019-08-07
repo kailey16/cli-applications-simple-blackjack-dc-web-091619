@@ -52,6 +52,16 @@ end
 #####################################################
 
 def runner
-  # code runner here
+  welcome 
+  initial_round
+  prompt_user
+  if user_input == "s"
+    prompt_user
+  else user_input == "h"
+    deal_card
+    display_card_total
+      if display_card_total > 21
+        end_game
+      end
 end
     
